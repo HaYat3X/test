@@ -1,0 +1,50 @@
+<div class="tab my-5 col-lg-11 mx-auto">
+  <div class="tab-list">
+    <button class="tab-list-item is-btn-active fw-bold">outer</button>
+
+    <button class="tab-list-item fw-bold">tops</button>
+
+    <button class="tab-list-item fw-bold">bottoms</button>
+
+    <button class="tab-list-item fw-bold">shoes</button>
+
+    <button class="tab-list-item fw-bold">other</button>
+  </div>
+
+  <div class="tab-contents-wrap">
+    <div class="tab-contents is-contents-active">
+      <% @purchasedItems.each do |purchasedItem| %>
+        <%= purchasedItem.category %>
+      <% end %>
+    </div>
+
+    <div class="tab-contents">
+      <p>タブメニューテキスト2。タブメニューテキスト2。タブメニューテキスト2。</p>
+    </div>
+
+    <div class="tab-contents">
+      <p>タブメニューテキスト3。タブメニューテキスト3。タブメニューテキスト3。</p>
+    </div>
+
+    <div class="tab-contents">
+      <p>タブメニューテキスト4。タブメニューテキスト4。タブメニューテキスト4。</p>
+    </div>
+
+    <div class="tab-contents">
+      <p>タブメニューテキスト5。タブメニューテキスト5。タブメニューテキスト5。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    $('.tab-list-item').on('click', function(){
+      let index = $('.tab-list-item').index(this);
+
+      $('.tab-list-item').removeClass('is-btn-active');
+      $(this).addClass('is-btn-active');
+      $('.tab-contents').removeClass('is-contents-active');
+      $('.tab-contents').eq(index).addClass('is-contents-active');
+    });
+  });
+</script>

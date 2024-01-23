@@ -1,0 +1,29 @@
+.tab-list {
+  display: flex;
+}
+
+.tab-list-item {
+  width: 25%;
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.tab-contents {
+  /* background-color: #0d6efd; */
+  display: none;
+  padding: 20px;
+}
+
+.is-btn-active {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: bold;
+}
+
+.is-contents-active {
+  display: block;
+}

@@ -1,0 +1,33 @@
+<%= form_with(model: @item, url: "/add-item", local: true, class: "col-lg-7 mx-auto my-5") do |f| %>
+  <div class="mb-3">
+    <label class="form-label">category</label>
+    <%= f.select :category, ['outer', 'tops', 'bottoms', 'shoes', 'other'], {include_blank: 'Select a category... ▾'}, class: 'form-control', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">imgae</label>
+    <%= f.file_field :image, class: "form-control", placeholder: "Enter image...", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">brand</label>
+    <%= f.text_field :brand, class: "form-control", placeholder: "Enter brand...", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">price</label>
+    <%= f.number_field :price, class: "form-control", placeholder: "Enter proce...", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Have you already purchased the item?</label>
+    <div>
+      <%= f.radio_button :purchas_flag, 1, required: true %>
+      <%= f.label :purchas_flag, "Yes" %>
+      <%= f.radio_button :purchas_flag, 0, required: true %>
+      <%= f.label :purchas_flag, "No" %>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">addItem</button>
+<% end %>
