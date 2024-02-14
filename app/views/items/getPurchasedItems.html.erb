@@ -13,11 +13,15 @@
 
   <div class="tab-contents-wrap">
     <div class="tab-contents is-contents-active">
-      <% @purchasedItems.each do |purchasedItem| %>
-        <%= purchasedItem.category %>
-      <% end %>
+      <div class="image-container row g-1 mt-1">
+        <% @purchasedItems.each do |purchasedItem| %>
+          <div class="image-item col-2">
+            <%= image_tag purchasedItem.image.url, style: "width: 100%; height: 300px; object-fit: cover;" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
+     
     <div class="tab-contents">
       <p>タブメニューテキスト2。タブメニューテキスト2。タブメニューテキスト2。</p>
     </div>
